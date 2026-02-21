@@ -3,6 +3,10 @@ let btn=document.querySelector('.size');
 
 //to create the grid
 btn.addEventListener('click',()=>{
+    let rows=document.querySelectorAll('.row');
+    rows.forEach((r)=>{
+        container.removeChild(r);
+    })
     let r=prompt("enter num of rows");
     let c=prompt("enter num of cols");
 for(let i=0;i<r;i++){
@@ -12,6 +16,12 @@ for(let i=0;i<r;i++){
         let cell=document.createElement('div');
         cell.classList.add('cell')
         row.appendChild(cell)
+        cell.addEventListener('mouseover',()=>{
+        cell.classList.add('colorcolor')
+    })
+      cell.addEventListener('mouseout',()=>{
+        cell.classList.add('colorcolor1')
+    })
     }
     container.appendChild(row);
     console.log("appended row")
@@ -22,10 +32,12 @@ for(let i=0;i<r;i++){
 //to clear the grid.
 let clear=document.querySelector('.clear')
 clear.addEventListener('click',()=>{
-    let rows=document.querySelectorAll('.row')
-    rows.forEach((row)=>{
-        container.removeChild(row);
+    let cells=document.querySelectorAll('.cell')
+    cells.forEach((cell)=>{
+        cell.classList.remove('colorcolor');
+        cell.classList.remove('colorcolor1');
     })
 })
+
 
 
