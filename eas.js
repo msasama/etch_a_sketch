@@ -3,10 +3,7 @@ let btn=document.querySelector('.size');
 
 //to create the grid
 btn.addEventListener('click',()=>{
-    let rows=document.querySelectorAll('.row');
-    rows.forEach((r)=>{
-        container.removeChild(r);
-    })
+   container.innerHTML="";
     let r=prompt("enter num of rows");
     let c=prompt("enter num of cols");
 for(let i=0;i<r;i++){
