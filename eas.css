@@ -1,36 +1,37 @@
-.container{
-    /* width:700px; */
-    background-color: #eaff00;
-    display: flex;
-    flex-direction: column;
-}
-body{
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:50vw;
-    gap:30px;
-}
-.row{
-    display: flex;
-}
-.cell{
-    height:20px;
-    width: 20px;
-    border:solid;
-    border-width: 2px;
-    border-color: black;
-    cursor: pointer;
-}
-button{
-    width:70px;
-    height:50px;
+    height: 100vh; /* Changed to 100vh so it takes the full screen height */
+    gap: 30px;
+    margin: 0;
+    background-color: #f0f0f0;
 }
 
-.colorcolor{
-    background-color: blue;
+.container {
+    width: 600px; /* Fixed container size */
+    height: 600px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap; /* This is the magic that pushes cells to the next line */
+    border: 4px solid black; 
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2); /* Just a little styling */
 }
-.colorcolor1{
-    background-color: red;
+
+.cell {
+    /* box-sizing is crucial here
+    It prevents borders from messing up the percentage math
+    */
+    box-sizing: border-box; 
+    border: 1px solid #e0e0e0; /* Super light border so you can see the grid */
+    cursor: crosshair; /* Changes cursor to look like you're drawing */
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
 }
